@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE module PUBLIC
+    "-//Puppy Crawl//DTD Check Configuration 1.2//EN"
+    "http://www.puppycrawl.com/dtds/configuration_1_2.dtd">
+<module name="Checker">
+
+    <property name="severity" value="error" />
+    <module name="TreeWalker">
+
+        <module name="JavadocType">
+            <property name="severity" value="warning" />
+        </module>
+
+        <module name="JavadocStyle" />
+        <module name="ConstantName" />
+        <module name="LocalFinalVariableName" />
+        <module name="LocalVariableName" />
+        <module name="MethodName" />
+        <module name="PackageName" />
+        <module name="ParameterName" />
+
+        <module name="StaticVariableName">
+            <metadata name="net.sf.eclipsecs.core.comment" value="starts with 's'" />
+            <property name="format" value="^[s][a-zA-Z0-9]*$" />
+        </module>
+
+        <module name="TypeName" />
+
+        <module name="UpperEll" />
+        <module name="AvoidStarImport" />
+        <module name="IllegalImport" />
+        <module name="RedundantImport" />
+        <module name="UnusedImports" />
+
+        <module name="MethodLength">
+            <property name="max" value="800" />
+        </module>
+        <module name="ParameterNumber">
+            <property name="id" value="maxParameterNumber" />
+            <property name="max" value="25" />
+            <property name="tokens" value="METHOD_DEF" />
+        </module>
+
+        <module name="EmptyForIteratorPad" />
+        <module name="MethodParamPad" />
+
+        <module name="NoWhitespaceAfter">
+            <property name="tokens" value="BNOT,DEC,DOT,INC,LNOT,UNARY_MINUS,UNARY_PLUS" />
+        </module>
+
+        <module name="DeclarationOrderCheck" />
+        <module name="NoWhitespaceBefore" />
+        <module name="ParenPad" />
+        <module name="TypecastParenPad" />
+        <module name="WhitespaceAfter" />
+        <module name="WhitespaceAround" />
+        <module name="ModifierOrder" />
+        <module name="RedundantModifier" />
+        <module name="AvoidNestedBlocks" />
+        <module name="EmptyBlock" />
+        <module name="LeftCurly" />
+        <module name="NeedBraces" />
+        <module name="RightCurly" />
+        <module name="EmptyStatement" />
+
+        <module name="HiddenField">
+            <property name="ignoreConstructorParameter" value="true" />
+        </module>
+
+        <module name="IllegalInstantiation" />
+        <module name="MissingSwitchDefault" />
+        <module name="SimplifyBooleanExpression" />
+        <module name="SimplifyBooleanReturn" />
+        <module name="InterfaceIsType" />
+
+        <module name="VisibilityModifier">
+            <property name="protectedAllowed" value="true" />
+            <property name="publicMemberPattern" value="" />
+        </module>
+
+        <module name="ArrayTypeStyle" />
+
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="// TODO Auto-generated method stub" />
+        </module>
+
+        <module name="RegexpSinglelineJava">
+            <property name="format" value="ex\.printStacktrace()" />
+            <property name="severity" value="warning" />
+        </module>
+    </module>
+
+</module>
