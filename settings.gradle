@@ -1,1 +1,1 @@
-include ':app', ':checkstyle'
+include ':app', ':custom-checkstyle'
