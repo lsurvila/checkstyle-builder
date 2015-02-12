@@ -141,9 +141,14 @@ public class AndroidDeclarationOrderCheck extends Check {
                 }
 
                 final Scope access = ScopeUtils.getScopeFromMods(ast);
+                // if access level was more accessible than previous, for example public after private
                 if (state.declarationAccess.compareTo(access) > 0) {
                     if (!ignoreModifiers) {
-                        log(ast, "Variable access definition in wrong order.");
+                        // if it's not parcelable creator
+                        if (!ignoreParcelableCreator || !isParcelableCreator(ast))
+                        {
+                            log(ast, "Variable access definition in wrong order.");
+                        }
                     }
                 }
                 else {
@@ -164,7 +169,8 @@ public class AndroidDeclarationOrderCheck extends Check {
             DetailAST typeAst = ast.getNextSibling();
             if (typeAst.getFirstChild().getType() == TokenTypes.DOT) {
                 DetailAST dotAst = typeAst.getFirstChild();
-                isParcelableType = dotAst.findFirstToken(TokenTypes.IDENT) != null && dotAst.findFirstToken(TokenTypes.IDENT).getText().equals("Parcelable");
+                isParcelableType = dotAst.findFirstToken(TokenTypes.IDENT) != null &&
+                        dotAst.findFirstToken(TokenTypes.IDENT).getText().equals("Parcelable");
             }
         }
         if (ast.getNextSibling().getNextSibling().getType() == TokenTypes.IDENT) {

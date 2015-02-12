@@ -34,5 +34,11 @@ task checkstyle(type: Checkstyle) {
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:21.0.3'
+
+    // for testing/creating checkstyle rules
     checkstyle project(':custom-checkstyle')
+
+    // for using compiled version
+    //checkstyle 'com.puppycrawl.tools:checkstyle:6.3'
+    //checkstyle files('../config/checkstyle/custom-checkstyle.jar')
 }

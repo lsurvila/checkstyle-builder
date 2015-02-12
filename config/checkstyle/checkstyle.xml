@@ -17,6 +17,14 @@
         <module name="MethodName" />
         <module name="PackageName" />
         <module name="ParameterName" />
+        <module name="VisibilityModifier">
+            <property name="packageAllowed" value="true" />
+            <property name="protectedAllowed" value="true" />
+            <property name="publicMemberPattern" value="" />
+        </module>
+        <module name="com.lsurvila.checkstyle.AndroidDeclarationOrderCheck" >
+            <property name="ignoreParcelableCreator" value="true" />
+        </module>
 
         <module name="StaticVariableName">
             <metadata name="net.sf.eclipsecs.core.comment" value="starts with 's'" />
@@ -47,7 +55,6 @@
             <property name="tokens" value="BNOT,DEC,DOT,INC,LNOT,UNARY_MINUS,UNARY_PLUS" />
         </module>
 
-        <module name="DeclarationOrderCheck" />
         <module name="NoWhitespaceBefore" />
         <module name="ParenPad" />
         <module name="TypecastParenPad" />
@@ -71,11 +78,6 @@
         <module name="SimplifyBooleanExpression" />
         <module name="SimplifyBooleanReturn" />
         <module name="InterfaceIsType" />
-
-        <module name="VisibilityModifier">
-            <property name="protectedAllowed" value="true" />
-            <property name="publicMemberPattern" value="" />
-        </module>
 
         <module name="ArrayTypeStyle" />
 
