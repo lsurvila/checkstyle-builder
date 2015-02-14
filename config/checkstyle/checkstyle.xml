@@ -22,8 +22,19 @@
             <property name="protectedAllowed" value="true" />
             <property name="publicMemberPattern" value="" />
         </module>
-        <module name="com.lsurvila.checkstyle.AndroidDeclarationOrderCheck" >
-            <property name="ignoreParcelableCreator" value="true" />
+        <module name="com.github.sevntu.checkstyle.checks.coding.CustomDeclarationOrderCheck" >
+            <property name="customDeclarationOrder" value="
+            Field(.*public .*) ###
+            Field(.*protected .*) ###
+            Field(.*private .*) ###
+            CTOR(.*) ###
+            MainMethod(.*) ###
+            GetterSetter(.*) ###
+            Method(.*) ###
+            InnerClass(.*) ###
+            InnerInterface(.*) ###
+            InnerEnum(.*) ###
+            DeclareAnnonClassField(public static final Parcelable.*Creator)" />
         </module>
 
         <module name="StaticVariableName">
