@@ -24,9 +24,14 @@
         </module>
         <module name="com.github.sevntu.checkstyle.checks.coding.CustomDeclarationOrderCheck" >
             <property name="customDeclarationOrder" value="
-            Field(.*public .*) ###
-            Field(.*protected .*) ###
-            Field(.*private .*) ###
+            Field(public static .*) ###
+            Field(protected static .*) ###
+            Field(static .*) ###
+            Field(private static .*) ###
+            Field(public .*) ###
+            Field(protected .*) ###
+            Field(.*) ###
+            Field(private .*) ###
             CTOR(.*) ###
             MainMethod(.*) ###
             GetterSetter(.*) ###
