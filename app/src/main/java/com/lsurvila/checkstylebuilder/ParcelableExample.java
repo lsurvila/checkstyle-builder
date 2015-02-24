@@ -3,19 +3,27 @@ package com.lsurvila.checkstylebuilder;
 import android.os.Parcel;
 import android.os.Parcelable;
 
+/**
+ * Example class for asserting variable order and Parcelable.Creator anonymous class.
+ */
 public class ParcelableExample implements Parcelable {
 
     // These are for asserting static order
     public static final int PUBLIC_CONST = 0;
     protected static final int PROTECTED_CONST = 0;
-    static final int PACKAGE_CONST = 0;
     private static final int PRIVATE_CONST = 0;
 
-    private String postCode;
-    String town;
+    // TODO find a way to assert package static variable
+    static final int PACKAGE_CONST = 0;
+
+    public String postCode;
+    protected String town;
     private double latitude;
     private double longitude;
     private boolean open;
+
+    // TODO find a way to assert package variable
+    int packageVar;
 
     protected ParcelableExample(Parcel in) {
         town = in.readString();
